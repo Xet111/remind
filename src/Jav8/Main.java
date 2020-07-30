@@ -9,6 +9,10 @@ import Jav8.Patterns.BuilderLesson.*;
 import Jav8.Patterns.FabricMethodLesson.DialogWeb;
 import Jav8.Patterns.FabricMethodLesson.DialogWin;
 import Jav8.Patterns.FabricMethodLesson.FactoryMethod;
+import Jav8.Remind1Week.JavaDocExercise.PlayingCard;
+import Jav8.Remind1Week.JavaDocExercise.PlayingCardDeck;
+import Jav8.Remind1Week.JavaDocExercise.PlayingCardRank;
+import Jav8.Remind1Week.JavaDocExercise.PlayingCardSuit;
 import Jav8.Remind1Week.PatternsR.AbstractFactoryR.OrderAtFactory;
 import Jav8.Remind1Week.PatternsR.AbstractFactoryR.TypeOfProduct;
 import Jav8.Remind1Week.PatternsR.AdapterR.JsonParser;
@@ -34,8 +38,12 @@ import java.util.Date;
  class Child  extends Main implements Parent{ }
 
 class Main {
+    {
+        System.out.println("Main object has been created, fields were initialized");
+    }
 
     private static FactoryMethod factoryMethod;
+
     public void makeCar(){
         Director director = new Director();
         CarBuilder builder = new CarBuilder();
@@ -51,12 +59,13 @@ class Main {
     }
 
     public void initialize(String a){
-        if (a == "Windows")
+        if (a.equals("Windows"))
             factoryMethod = new DialogWin();
         else
             factoryMethod = new DialogWeb();
 
     }
+
     public static void recordVoice(){
         int RECORD_TIME = 60000;
         File wavFile = new File("C:\\Users\\Home\\Desktop\\Intensive\\Record1.wav");
@@ -64,16 +73,13 @@ class Main {
         final SoundRecordingUtil recorder = new SoundRecordingUtil();
 
         // create a separate thread for recording
-        Thread recordThread = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    System.out.println("Start recording...");
-                    recorder.start();
-                } catch (LineUnavailableException ex) {
-                    ex.printStackTrace();
-                    System.exit(-1);
-                }
+        Thread recordThread = new Thread(() -> {
+            try {
+                System.out.println("Start recording...");
+                recorder.start();
+            } catch (LineUnavailableException ex) {
+                ex.printStackTrace();
+                System.exit(-1);
             }
         });
 
@@ -111,7 +117,14 @@ class Main {
 //        String json = "{ \"name\": \"Alice\", \"age\": 20}";
 //        JsonParser parser = new JsonParser();
 //        JsonReader.JsonRead(parser, json);
-        
+        PlayingCard card = new PlayingCard("Ace","red");
+        PlayingCard card2 = new PlayingCard(PlayingCardRank.NOT_ACE.toString(),
+                PlayingCardSuit.Black.toString());
+        PlayingCardDeck deck = new PlayingCardDeck();
+        deck.getDeck().add(card);
+        deck.getDeck().add(card2);
+        System.out.println(deck);
+
     }
 }
 
