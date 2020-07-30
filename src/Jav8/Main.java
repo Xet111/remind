@@ -117,14 +117,14 @@ class Main {
 //        String json = "{ \"name\": \"Alice\", \"age\": 20}";
 //        JsonParser parser = new JsonParser();
 //        JsonReader.JsonRead(parser, json);
-        PlayingCard card = new PlayingCard("Ace","red");
-        PlayingCard card2 = new PlayingCard(PlayingCardRank.NOT_ACE.toString(),
-                PlayingCardSuit.Black.toString());
         PlayingCardDeck deck = new PlayingCardDeck();
-        deck.getDeck().add(card);
-        deck.getDeck().add(card2);
-        System.out.println(deck);
 
+        System.out.println(deck.initializeDeck());
+
+        String a = "2";
+        int b = Integer.valueOf(a);
+
+        System.out.println(b + 1);
     }
 }
 
@@ -132,22 +132,3 @@ class Main {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Охуенность темы в том, что даже в глухом одиночестве можно себе устроить порядочный вечерок, спасибо за это
-//https://live.skillbox.ru/webinars/code/zapisyvaem-zvuk-i-zagruzhaem-v-dropbox1/?utm_source=expertsender&utm_medium=email&utm_campaign=all_all_expertsender_email_invite1_intensive-116-2020-07_all_code_skillbox&utm_content=2020-07-24&utm_term=intensive&email=28compasov%40gmail.com

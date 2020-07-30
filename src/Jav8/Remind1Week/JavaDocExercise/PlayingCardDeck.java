@@ -9,6 +9,15 @@ public class PlayingCardDeck {
         return deck;
     }
 
+    public ArrayList<PlayingCard> initializeDeck(){
+        for (PlayingCardRank o : PlayingCardRank.values() ){
+            for(PlayingCardSuit cardSuit : PlayingCardSuit.values()){
+                deck.add(new PlayingCard(o.toString(), cardSuit.toString()));
+            }
+        }
+        return deck;
+    }
+
     @Override
     public String toString() {
         return "PlayingCardDeck{" +
@@ -18,5 +27,6 @@ public class PlayingCardDeck {
 
     public void setDeck(ArrayList<PlayingCard> deck) {
         this.deck = deck;
+
     }
 }
