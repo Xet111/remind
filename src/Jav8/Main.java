@@ -9,6 +9,8 @@ import Jav8.Patterns.BuilderLesson.*;
 import Jav8.Patterns.FabricMethodLesson.DialogWeb;
 import Jav8.Patterns.FabricMethodLesson.DialogWin;
 import Jav8.Patterns.FabricMethodLesson.FactoryMethod;
+import Jav8.Remind1Week.JavaDocExercise.NestedClass.DataStructure;
+import Jav8.Remind1Week.JavaDocExercise.NestedClass.OuterClass;
 import Jav8.Remind1Week.JavaDocExercise.PlayingCard;
 import Jav8.Remind1Week.JavaDocExercise.PlayingCardDeck;
 import Jav8.Remind1Week.JavaDocExercise.PlayingCardRank;
@@ -34,8 +36,18 @@ import java.util.Arrays;
 import java.util.Date;
 
 
- interface Parent{}
- class Child  extends Main implements Parent{ }
+ interface Parent{
+     public void eat();
+ }
+ class Child  implements Parent{
+
+     public void eat() {
+         System.out.println("Eat the father");
+     }
+     public void fart(){
+         System.out.println("Fart");
+     }
+ }
 
 class Main {
     {
@@ -117,14 +129,11 @@ class Main {
 //        String json = "{ \"name\": \"Alice\", \"age\": 20}";
 //        JsonParser parser = new JsonParser();
 //        JsonReader.JsonRead(parser, json);
-        PlayingCardDeck deck = new PlayingCardDeck();
-
-        System.out.println(deck.initializeDeck());
-
-        String a = "2";
-        int b = Integer.valueOf(a);
-
-        System.out.println(b + 1);
+        Parent parent = () -> {
+            int i = 1;
+            System.out.println("FARtttttt... " + i + " times");
+        };
+        parent.eat();
     }
 }
 
