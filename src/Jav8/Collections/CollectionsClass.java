@@ -4,6 +4,7 @@ import java.util.*;
 
 public class CollectionsClass {
 
+    private final static int SIZE = 12;
     public void linkedListMethod(){
         List<String> linkedList = new LinkedList<>();
         linkedList.add("Anime");
@@ -68,7 +69,17 @@ public class CollectionsClass {
         System.out.println(set);
     }
 
+    public void HashMapMethod(){
+        HashMap<Integer , String> hashMap = new HashMap();
+        ArrayList<String> arrayList = new ArrayList<>();
 
+
+        for (int i = 0; i < SIZE; i++){
+            arrayList.add("Object number - "+ i);
+            hashMap.put(i, arrayList.get(i));
+        }
+        System.out.println(hashMap);
+    }
 
 
 }

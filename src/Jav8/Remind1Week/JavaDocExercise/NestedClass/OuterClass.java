@@ -4,9 +4,9 @@ public class OuterClass {
     private static int i = 1;
     public static int x = 2;
 
-    private static class NestedClass {
+    public static class NestedClass {
 
-        private void methodNested(){
+        public void methodNested(){
             System.out.println(i);
             System.out.println(x);
         }

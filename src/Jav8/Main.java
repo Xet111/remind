@@ -9,6 +9,7 @@ import Jav8.Patterns.BuilderLesson.*;
 import Jav8.Patterns.FabricMethodLesson.DialogWeb;
 import Jav8.Patterns.FabricMethodLesson.DialogWin;
 import Jav8.Patterns.FabricMethodLesson.FactoryMethod;
+import Jav8.Remind1Week.JavaDocExercise.Lambda.LambdaExpression;
 import Jav8.Remind1Week.JavaDocExercise.NestedClass.DataStructure;
 import Jav8.Remind1Week.JavaDocExercise.NestedClass.OuterClass;
 import Jav8.Remind1Week.JavaDocExercise.PlayingCard;
@@ -32,26 +33,38 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.function.Consumer;
+import java.util.function.Predicate;
 
 
- interface Parent{
-     public void eat();
+interface Parent{
+     public void eat(int i);
  }
- class Child  implements Parent{
-
-     public void eat() {
-         System.out.println("Eat the father");
-     }
-     public void fart(){
-         System.out.println("Fart");
-     }
- }
+ //class Child  implements Parent{
+//
+//     public void eat() {
+//         System.out.println("Eat the father");
+//     }
+//     public void fart(){
+//         System.out.println("Fart");
+//     }
+// }
 
 class Main {
     {
         System.out.println("Main object has been created, fields were initialized");
+    }
+
+    private void predicate(ArrayList<Integer> list, Predicate predicate,
+                           Consumer consumer){
+        for (Integer i : list){
+            if (predicate.test(i)){
+                consumer.accept(i);
+            }
+        }
     }
 
     private static FactoryMethod factoryMethod;
@@ -129,11 +142,10 @@ class Main {
 //        String json = "{ \"name\": \"Alice\", \"age\": 20}";
 //        JsonParser parser = new JsonParser();
 //        JsonReader.JsonRead(parser, json);
-        Parent parent = () -> {
-            int i = 1;
-            System.out.println("FARtttttt... " + i + " times");
-        };
-        parent.eat();
+        LambdaExpression lambda = new LambdaExpression();
+        lambda.lambdaMethod();
+
+
     }
 }
 
