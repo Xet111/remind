@@ -23,6 +23,8 @@ import Jav8.Remind1Week.PatternsR.AdapterR.JsonReader;
 import Jav8.Remind1Week.PatternsR.FactoryR.DrinkType;
 import Jav8.Remind1Week.PatternsR.FactoryR.FactoryR;
 import Jav8.Sorting.SortMethods;
+import Jav8.String.StringPractise;
+import Jav8.String.WikipediaAPI;
 import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.v2.DbxClientV2;
 import com.dropbox.core.v2.files.FileMetadata;
@@ -142,10 +144,11 @@ class Main {
 //        String json = "{ \"name\": \"Alice\", \"age\": 20}";
 //        JsonParser parser = new JsonParser();
 //        JsonReader.JsonRead(parser, json);
-        LambdaExpression lambda = new LambdaExpression();
-        lambda.lambdaMethod();
 
-
+        StringPractise stringPractise = new StringPractise();
+        stringPractise.replaceEachSecondSubString("Object anime is Object calosiobj " +
+                        "Object f Object dksjdhdjdnjcndjnc",
+                "Object", "OOP");
     }
 }
 

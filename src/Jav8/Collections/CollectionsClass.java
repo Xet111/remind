@@ -65,7 +65,6 @@ public class CollectionsClass {
         Iterator <Integer>iterator = set.iterator();
         iterator.forEachRemaining(o -> System.out.println(o+2));
 
-
         System.out.println(set);
     }
 
