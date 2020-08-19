@@ -24,6 +24,7 @@ import Jav8.Remind1Week.PatternsR.FactoryR.DrinkType;
 import Jav8.Remind1Week.PatternsR.FactoryR.FactoryR;
 import Jav8.Sorting.SortMethods;
 import Jav8.String.StringPractise;
+import Jav8.String.UkrNetAPI;
 import Jav8.String.WikipediaAPI;
 import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.v2.DbxClientV2;
@@ -42,9 +43,9 @@ import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 
-interface Parent{
-     public void eat(int i);
- }
+//interface Parent{
+//     public void eat(int i);
+// }
  //class Child  implements Parent{
 //
 //     public void eat() {
@@ -145,10 +146,18 @@ class Main {
 //        JsonParser parser = new JsonParser();
 //        JsonReader.JsonRead(parser, json);
 
-        StringPractise stringPractise = new StringPractise();
-        stringPractise.replaceEachSecondSubString("Object anime is Object calosiobj " +
-                        "Object f Object dksjdhdjdnjcndjnc",
-                "Object", "OOP");
+//        StringPractise stringPractise = new StringPractise();
+//        System.out.println(stringPractise.replaceEachSecondSubString("Object anime is Object calosiobj " +
+//                        "Object f Object dksjdhdjdnjcndjnc",
+//                "Object", "OOP"));
+
+        UkrNetAPI ukrNetAPI = new UkrNetAPI();
+        try {
+            ukrNetAPI.showFeed();
+        }
+        catch(Exception ex){
+            ex.printStackTrace();
+        }
     }
 }
 

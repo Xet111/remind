@@ -8,37 +8,18 @@ import java.io.*;
 import java.net.*;
 
 public class WikipediaAPI {
-    private final static String con = "Хуй";
+    private final static String WIKI_LINK = "https://ru.wikipedia.org/wiki/";
 
-   static String input = con;
-
-    private final static String WIKI_LINK =
-            "https://ru.wikipedia.org/wiki/" + input;
-
-   static String str;
-   static
-    {
+    public static void wikiExplore(String input){
         try {
-            str = URLEncoder.encode(WIKI_LINK, "UTF-8");
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public static void wikiExplore(){
-        try {
-            URL url = new URL(WIKI_LINK);
+            URL url = new URL(WIKI_LINK + input);
             URLConnection urlConnection = url.openConnection();
-//            InputStream urlConnection = url.openConnection().getInputStream();
-//            Reader reader = new InputStreamReader(urlConnection);
             BufferedReader in = new BufferedReader(new InputStreamReader(
                                     urlConnection.getInputStream()));
             String inputLine;
             while ((inputLine = in.readLine()) != null)
                 System.out.println(inputLine);
             in.close();
-//            JsonParser parser = new JsonParser();
-//            parser.ParseJson(reader.toString());
         } catch (IOException e) {
             e.printStackTrace();
         }

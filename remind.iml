@@ -10,5 +10,6 @@
     <orderEntry type="library" name="dropbox-core-sdk-3.1.4" level="project" />
     <orderEntry type="library" name="json-20200518" level="project" />
     <orderEntry type="library" name="gson-2.8.6" level="project" />
+    <orderEntry type="library" name="jsoup-1.13.1" level="project" />
   </component>
 </module>

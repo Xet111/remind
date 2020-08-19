@@ -102,7 +102,7 @@ public class StringPractise {
         System.out.println(builder);
     }
 
-    public void replaceEachSecondSubString(String str, String substring, String newString){
+    public String replaceEachSecondSubString(String str, String substring, String newString){
         StringBuilder builder = new StringBuilder(str);
         int i = 0, leftBorder = 0;
         while((builder.indexOf(substring, leftBorder) != -1 &&
@@ -120,6 +120,6 @@ public class StringPractise {
             }
         }
         str = builder.toString();
-        System.out.println(str);
+        return str;
     }
 }
