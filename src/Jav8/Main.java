@@ -151,13 +151,8 @@ class Main {
 //                        "Object f Object dksjdhdjdnjcndjnc",
 //                "Object", "OOP"));
 
-        UkrNetAPI ukrNetAPI = new UkrNetAPI();
-        try {
-            ukrNetAPI.showFeed();
-        }
-        catch(Exception ex){
-            ex.printStackTrace();
-        }
+        StringPractise practise = new StringPractise();
+        System.out.println(practise.centralChars("ceec"));
     }
 }
 

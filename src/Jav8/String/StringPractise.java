@@ -122,4 +122,12 @@ public class StringPractise {
         str = builder.toString();
         return str;
     }
+
+    public String centralChars(String str){
+        if(str.length() % 2 == 0){
+            return  "" + str.charAt((str.length() / 2) - 1) + str.charAt(str.length() / 2);
+        }
+        else
+            return "wrong input";
+    }
 }
