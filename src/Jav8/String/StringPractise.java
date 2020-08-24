@@ -2,6 +2,8 @@ package Jav8.String;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class StringPractise {
     public void stringExercise(String stringOne, String stringTwo) throws Exception{
@@ -129,5 +131,11 @@ public class StringPractise {
         }
         else
             return "wrong input";
+    }
+
+    public void regexTesting(String testString){
+        Pattern pattern = Pattern.compile("Java [0-9]+");
+        Matcher matcher = pattern.matcher(testString);
+        System.out.println(matcher.matches());
     }
 }

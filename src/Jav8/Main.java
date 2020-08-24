@@ -41,6 +41,8 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 
 //interface Parent{
@@ -140,6 +142,12 @@ class Main {
 
     }
 
+    public static boolean test(String testString) {
+        Pattern pattern = Pattern.compile(".+\\.(com|ua|ru|org)");
+        Matcher matcher = pattern.matcher(testString);
+        return matcher.matches();
+    }
+
 
     public static void main(String[] args) {
 //        String json = "{ \"name\": \"Alice\", \"age\": 20}";
@@ -151,8 +159,8 @@ class Main {
 //                        "Object f Object dksjdhdjdnjcndjnc",
 //                "Object", "OOP"));
 
-        StringPractise practise = new StringPractise();
-        System.out.println(practise.centralChars("ceec"));
+        StringPractise stringPractise = new StringPractise();
+        stringPractise.regexTesting("Java 11");
     }
 }
 
