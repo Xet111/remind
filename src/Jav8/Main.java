@@ -1,6 +1,8 @@
 package Jav8;
 
 import Jav8.Collections.CollectionsClass;
+import Jav8.Exceptions.ExceptionLesson;
+import Jav8.Exceptions.ScannerException;
 import Jav8.Generics.GenericsL;
 import Jav8.Intensive.JavaSoundRecorder;
 import Jav8.Intensive.MyThread;
@@ -59,9 +61,7 @@ import java.util.regex.Pattern;
 // }
 
 class Main {
-    {
-        System.out.println("Main object has been created, fields were initialized");
-    }
+
 
     private void predicate(ArrayList<Integer> list, Predicate predicate,
                            Consumer consumer){
@@ -148,6 +148,15 @@ class Main {
         return matcher.matches();
     }
 
+    public int sumOfNumber(int number){
+        int res = 0;
+        while(number != 0){
+            res += number%10;
+            number = number/10;
+        }
+        return res;
+    }
+
 
     public static void main(String[] args) {
 //        String json = "{ \"name\": \"Alice\", \"age\": 20}";
@@ -159,11 +168,23 @@ class Main {
 //                        "Object f Object dksjdhdjdnjcndjnc",
 //                "Object", "OOP"));
 
-        StringPractise stringPractise = new StringPractise();
-        stringPractise.regexTesting("Java 11");
-    }
-}
 
+        ExceptionLesson ex = new ExceptionLesson();
+
+        try {
+            ex.ExceptionMethod();
+        }
+        catch (IOException e){
+            System.out.println("IO");
+        }
+        catch (Exception e){
+            System.out.println("Ex");
+        }
+    }
+
+
+
+}
 
 
 
