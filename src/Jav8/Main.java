@@ -1,46 +1,22 @@
 package Jav8;
 
-import Jav8.Collections.CollectionsClass;
-import Jav8.Exceptions.ExceptionLesson;
-import Jav8.Exceptions.ScannerException;
-import Jav8.Generics.GenericsL;
 import Jav8.Intensive.JavaSoundRecorder;
-import Jav8.Intensive.MyThread;
 import Jav8.Intensive.SoundRecordingUtil;
 import Jav8.Patterns.BuilderLesson.*;
+import Jav8.Patterns.VendingMachine.Coin;
+import Jav8.Patterns.VendingMachine.VendingMachine;
 import Jav8.Patterns.FabricMethodLesson.DialogWeb;
 import Jav8.Patterns.FabricMethodLesson.DialogWin;
 import Jav8.Patterns.FabricMethodLesson.FactoryMethod;
-import Jav8.Remind1Week.JavaDocExercise.Lambda.LambdaExpression;
-import Jav8.Remind1Week.JavaDocExercise.NestedClass.DataStructure;
-import Jav8.Remind1Week.JavaDocExercise.NestedClass.OuterClass;
-import Jav8.Remind1Week.JavaDocExercise.PlayingCard;
-import Jav8.Remind1Week.JavaDocExercise.PlayingCardDeck;
-import Jav8.Remind1Week.JavaDocExercise.PlayingCardRank;
-import Jav8.Remind1Week.JavaDocExercise.PlayingCardSuit;
-import Jav8.Remind1Week.PatternsR.AbstractFactoryR.OrderAtFactory;
-import Jav8.Remind1Week.PatternsR.AbstractFactoryR.TypeOfProduct;
-import Jav8.Remind1Week.PatternsR.AdapterR.JsonParser;
-import Jav8.Remind1Week.PatternsR.AdapterR.JsonReader;
-import Jav8.Remind1Week.PatternsR.FactoryR.DrinkType;
-import Jav8.Remind1Week.PatternsR.FactoryR.FactoryR;
-import Jav8.Sorting.SortMethods;
-import Jav8.String.StringPractise;
-import Jav8.String.UkrNetAPI;
-import Jav8.String.WikipediaAPI;
+import Jav8.Remind1Week.PatternsR.FactoryR.*;
 import com.dropbox.core.DbxRequestConfig;
 import com.dropbox.core.v2.DbxClientV2;
-import com.dropbox.core.v2.files.FileMetadata;
 
 import javax.sound.sampled.LineUnavailableException;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
+import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.regex.Matcher;
@@ -159,31 +135,23 @@ class Main {
 
 
     public static void main(String[] args) {
-//        String json = "{ \"name\": \"Alice\", \"age\": 20}";
-//        JsonParser parser = new JsonParser();
-//        JsonReader.JsonRead(parser, json);
-
-//        StringPractise stringPractise = new StringPractise();
-//        System.out.println(stringPractise.replaceEachSecondSubString("Object anime is Object calosiobj " +
-//                        "Object f Object dksjdhdjdnjcndjnc",
-//                "Object", "OOP"));
-
-
-        ExceptionLesson ex = new ExceptionLesson();
-
+        List<Drink> list = new ArrayList<>();
+        list.add(new CocaCola());
+        list.add(new CocaCola());
+        list.add(new SevenUp());
+        VendingMachine vendingMachine = new VendingMachine(list);
+        ArrayList<Coin> coins = new ArrayList<Coin>();
+        coins.add(new Coin("penny"));
+        coins.add(new Coin("penny"));
+        coins.add(new Coin("quarter"));
         try {
-            ex.ExceptionMethod();
-        }
-        catch (IOException e){
-            System.out.println("IO");
+            System.out.println(vendingMachine.vendingOperationMenu(5, coins).getName().getTitle());
+            System.out.println(vendingMachine.vendingOperationMenu(1, coins).getName().getTitle());
         }
         catch (Exception e){
-            System.out.println("Ex");
+            e.printStackTrace();
         }
     }
-
-
-
 }
 
 

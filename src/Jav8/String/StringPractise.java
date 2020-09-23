@@ -31,7 +31,7 @@ public class StringPractise {
             dict.putIfAbsent(str.charAt(i), value);
             value = 0;
         }
-        dict.entrySet().stream().forEach(s -> System.out.println(s));
+        dict.entrySet().forEach(System.out::println);
     }
 
     public void unicodePoint(String str, int index){
@@ -93,9 +93,9 @@ public class StringPractise {
                 .append(operator)
                 .append(rightOperand)
                 .append(" = ")
-                .append( operator == " + " ? (leftOperand + rightOperand) :
-                        (operator == " - " ? (leftOperand - rightOperand) :
-                                (operator == " * " ? (leftOperand * rightOperand) :
+                .append(operator.equals(" + ") ? (leftOperand + rightOperand) :
+                        (operator.equals(" - ") ? (leftOperand - rightOperand) :
+                                (operator.equals(" * ") ? (leftOperand * rightOperand) :
                                         (leftOperand / rightOperand))) );
 
 //        builder

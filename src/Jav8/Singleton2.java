@@ -1,7 +1,7 @@
 package Jav8;
 
 public class Singleton2 {
-    private static Singleton2 instance = new Singleton2();
+    private static final Singleton2 instance = new Singleton2();
 
     private Singleton2(){
     }

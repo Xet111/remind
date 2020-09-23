@@ -1,8 +1,8 @@
 package Jav8.Remind1Week.PatternsR.FactoryR;
 
-public class CocaCola implements Drink{
-    @Override
-    public void drinkTheDrink() {
-        System.out.println("Drinking coke");
+public class CocaCola extends Drink{
+    public CocaCola() {
+        this.name = DrinkType.COCA_COLA;
+        this.cost = 200;
     }
 }
